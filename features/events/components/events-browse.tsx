@@ -9,6 +9,7 @@ import { EventsGridCard, EventsListCard, ViewToggle } from "./event-cards";
 import { ALL_EVENTS, CATEGORIES } from "@/features/events/data";
 import { DEFAULT_FILTERS, filterAndSortEvents } from "@/features/events/lib";
 import type { Filters, SortKey } from "@/features/events/types";
+import { formatAmount, PRICE_FILTER_MAX } from "@/features/theme/money";
 import { display, mono, th } from "@/features/theme/tokens";
 import { useGateTheme } from "@/features/theme/use-gate-theme";
 
@@ -21,7 +22,7 @@ export function EventsBrowse() {
   const [sort, setSort] = useState<SortKey>("trending");
   const [view, setView] = useState<"grid" | "list">("grid");
   const [sidebarOpen, setSidebar] = useState(false);
-  const [priceRange, setPriceRange] = useState([0, 700]);
+  const [priceRange, setPriceRange] = useState([0, PRICE_FILTER_MAX]);
 
   const activeFilters: { label: string; remove: () => void }[] = [
     ...filters.cats.map((cat) => ({
@@ -40,13 +41,13 @@ export function EventsBrowse() {
           cities: current.cities.filter((item) => item !== city),
         })),
     })),
-    ...(filters.priceMin > 0 || filters.priceMax < 700
+    ...(filters.priceMin > 0 || filters.priceMax < PRICE_FILTER_MAX
       ? [
           {
-            label: `£${filters.priceMin}–£${filters.priceMax}`,
+            label: `${formatAmount(filters.priceMin)}–${formatAmount(filters.priceMax)}`,
             remove: () => {
-              setFilters((current) => ({ ...current, priceMin: 0, priceMax: 700 }));
-              setPriceRange([0, 700]);
+              setFilters((current) => ({ ...current, priceMin: 0, priceMax: PRICE_FILTER_MAX }));
+              setPriceRange([0, PRICE_FILTER_MAX]);
             },
           },
         ]
@@ -69,7 +70,7 @@ export function EventsBrowse() {
 
   function clearAll() {
     setFilters(DEFAULT_FILTERS);
-    setPriceRange([0, 700]);
+    setPriceRange([0, PRICE_FILTER_MAX]);
     setSearch("");
   }
 

@@ -19,6 +19,7 @@ import {
 import { AttrTierCard } from "./attr-tier-card";
 import { PaymentFlow } from "@/features/checkout/payment-flow";
 import type { Attraction } from "@/features/attractions/types";
+import { ATTRACTION_BOOKING_FEE, formatPrice } from "@/features/theme/money";
 import { badgeCls, display, mono, th } from "@/features/theme/tokens";
 import { useGateTheme } from "@/features/theme/use-gate-theme";
 
@@ -31,7 +32,7 @@ export function AttractionDetail({ attr }: { attr: Attraction }) {
   const chosen = selTier !== null ? attr.tiers[selTier] : null;
   const subtotal = chosen ? chosen.price * qty : 0;
   const isFree = chosen?.price === 0;
-  const fee = isFree ? 0 : parseFloat((0.95 * qty).toFixed(2));
+  const fee = isFree ? 0 : ATTRACTION_BOOKING_FEE * qty;
   const t = th(dark);
 
   return (
@@ -369,12 +370,12 @@ export function AttractionDetail({ attr }: { attr: Attraction }) {
                         <span style={{ color: t.muted }}>
                           {qty}× {chosen.label}
                         </span>
-                        <span style={{ color: t.txt }}>{isFree ? "FREE" : `£${subtotal}`}</span>
+                        <span style={{ color: t.txt }}>{isFree ? "FREE" : formatPrice(subtotal)}</span>
                       </div>
                       {!isFree && (
                         <div className="flex justify-between">
                           <span style={{ color: t.muted }}>Booking fee</span>
-                          <span style={{ color: t.txt }}>£{fee}</span>
+                          <span style={{ color: t.txt }}>{formatPrice(fee)}</span>
                         </div>
                       )}
                       <div
@@ -383,7 +384,7 @@ export function AttractionDetail({ attr }: { attr: Attraction }) {
                       >
                         <span style={{ color: t.muted }}>Total</span>
                         <span style={{ color: t.txt }}>
-                          {isFree ? "FREE" : `£${(subtotal + fee).toFixed(2)}`}
+                          {isFree ? "FREE" : formatPrice(subtotal + fee)}
                         </span>
                       </div>
                     </div>
@@ -410,7 +411,7 @@ export function AttractionDetail({ attr }: { attr: Attraction }) {
                       <Ticket size={16} />
                       {isFree
                         ? "Reserve Free Ticket"
-                        : `Book Now — £${(subtotal + fee).toFixed(2)}`}
+                        : `Book Now — ${formatPrice(subtotal + fee)}`}
                     </>
                   ) : (
                     "Select a Ticket Type"

@@ -4,6 +4,7 @@ import { Check } from "lucide-react";
 
 import { CATEGORIES, CITIES } from "@/features/events/data";
 import type { Filters } from "@/features/events/types";
+import { formatAmount, PRICE_FILTER_MAX, PRICE_FILTER_PRESETS, PRICE_FILTER_STEP } from "@/features/theme/money";
 import { display, mono, th } from "@/features/theme/tokens";
 
 export function EventFilters({
@@ -135,17 +136,17 @@ export function EventFilters({
         <div className="space-y-3">
           <div className="flex items-center justify-between">
             <span className="text-sm font-bold" style={{ ...display, color: t.txt }}>
-              £{priceRange[0]}
+              {formatAmount(priceRange[0])}
             </span>
             <span className="text-sm font-bold" style={{ ...display, color: t.txt }}>
-              £{priceRange[1]}
+              {formatAmount(priceRange[1])}
             </span>
           </div>
           <input
             type="range"
             min={0}
-            max={700}
-            step={10}
+            max={PRICE_FILTER_MAX}
+            step={PRICE_FILTER_STEP}
             value={priceRange[1]}
             onChange={(event) => {
               const value = Number(event.target.value);
@@ -155,12 +156,7 @@ export function EventFilters({
             className="w-full accent-emerald-500 cursor-pointer"
           />
           <div className="grid grid-cols-2 gap-2">
-            {[
-              [0, 50],
-              [50, 150],
-              [150, 400],
-              [400, 700],
-            ].map(([lo, hi]) => (
+            {PRICE_FILTER_PRESETS.map(([lo, hi]) => (
               <button
                 key={`${lo}-${hi}`}
                 type="button"
@@ -176,7 +172,7 @@ export function EventFilters({
                   border: `1px solid ${t.border}`,
                 }}
               >
-                £{lo}–£{hi}
+                {formatAmount(lo)}–{formatAmount(hi)}
               </button>
             ))}
           </div>

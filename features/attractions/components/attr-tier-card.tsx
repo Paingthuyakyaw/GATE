@@ -3,6 +3,7 @@
 import { Check, ChevronRight } from "lucide-react";
 
 import type { AttrTier } from "@/features/attractions/types";
+import { formatPrice } from "@/features/theme/money";
 import { display, mono, th } from "@/features/theme/tokens";
 
 export function AttrTierCard({
@@ -59,7 +60,7 @@ export function AttrTierCard({
           ) : (
             <>
               <div className="text-2xl font-bold" style={{ ...display, color: t.txt }}>
-                £{tier.price}
+                {formatPrice(tier.price)}
               </div>
               <div className="text-[10px]" style={{ ...mono, color: t.faint }}>
                 per person

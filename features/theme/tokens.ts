@@ -1,11 +1,13 @@
 import type { CSSProperties } from "react";
 
+import { FONT_FAMILY } from "@/config/fonts";
+
 export const mono: CSSProperties = {
-  fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
+  fontFamily: FONT_FAMILY,
 };
 
 export const display: CSSProperties = {
-  fontFamily: "var(--font-display), 'Barlow Condensed', sans-serif",
+  fontFamily: FONT_FAMILY,
 };
 
 export function th(dark: boolean) {

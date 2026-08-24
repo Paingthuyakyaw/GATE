@@ -1,3 +1,5 @@
+import { PRICE_FILTER_MAX } from "@/features/theme/money";
+
 import type { Event, Filters, SortKey } from "./types";
 
 export function eventSellThrough(event: Event) {
@@ -68,6 +70,6 @@ export const DEFAULT_FILTERS: Filters = {
   cats: [],
   cities: [],
   priceMin: 0,
-  priceMax: 700,
+  priceMax: PRICE_FILTER_MAX,
   availability: "all",
 };

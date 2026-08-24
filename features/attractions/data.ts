@@ -22,11 +22,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Summer Hours", badgeType:"new", color:"#f97316",
     highlights:["16 major thrill rides","Fright Nights (Oct)","THORPE SHARK Hotel","Island Eats food court","Free parking"],
     tiers:[
-      { name:"ADULT",      label:"Adult (13+)",        price:45, perks:["Full park access","Unlimited rides","Park map"] },
-      { name:"CHILD",      label:"Child (3–12)",        price:32, perks:["Full park access","Unlimited rides","Park map"] },
-      { name:"SENIOR",     label:"Senior (60+)",        price:36, perks:["Full park access","Unlimited rides","Park map"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",    price:140,perks:["2 adult + 2 child tickets","Discounted bundle","Park map"] },
-      { name:"ANNUAL PASS",label:"Merlin Annual Pass",  price:99, perks:["Unlimited visits all year","15% F&B discount","Guest days","Early entry"] },
+      { name:"ADULT",      label:"Adult (13+)",        price:25000, perks:["Full park access","Unlimited rides","Park map"] },
+      { name:"CHILD",      label:"Child (3–12)",        price:18000, perks:["Full park access","Unlimited rides","Park map"] },
+      { name:"SENIOR",     label:"Senior (60+)",        price:20000, perks:["Full park access","Unlimited rides","Park map"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",    price:78000,perks:["2 adult + 2 child tickets","Discounted bundle","Park map"] },
+      { name:"ANNUAL PASS",label:"Merlin Annual Pass",  price:55000, perks:["Unlimited visits all year","15% F&B discount","Guest days","Early entry"] },
     ],
   },
   {
@@ -40,10 +40,10 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Must-See", badgeType:"featured", color:"#a855f7",
     highlights:["Great Hall","Diagon Alley","Flying Ford Anglia","Butterbeer","Platform 9¾","Forbidden Forest"],
     tiers:[
-      { name:"ADULT",      label:"Adult (16+)",         price:55, perks:["Studio access","Self-guided tour","Shuttle from Watford Jn."] },
-      { name:"CHILD",      label:"Child (5–15)",         price:47, perks:["Studio access","Self-guided tour","Shuttle from Watford Jn."] },
+      { name:"ADULT",      label:"Adult (16+)",         price:31000, perks:["Studio access","Self-guided tour","Shuttle from Watford Jn."] },
+      { name:"CHILD",      label:"Child (5–15)",         price:26000, perks:["Studio access","Self-guided tour","Shuttle from Watford Jn."] },
       { name:"TODDLER",    label:"Child under 5",        price:0,  perks:["Free entry (ticket still required)"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",     price:185,perks:["2 adult + 2 child tickets","Bundle saving","Shuttle included"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",     price:103000,perks:["2 adult + 2 child tickets","Bundle saving","Shuttle included"] },
     ],
   },
   {
@@ -57,11 +57,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"New Penguin Beach", badgeType:"new", color:"#10b981",
     highlights:["Penguin Beach","Gorilla Kingdom","Tiger Territory","Land of the Lions","Butterfly Paradise","Nightlife"],
     tiers:[
-      { name:"ADULT",      label:"Adult (16–64)",       price:28, perks:["Full zoo access","All shows & talks","Guidebook"] },
-      { name:"CHILD",      label:"Child (3–15)",         price:18, perks:["Full zoo access","All shows & talks"] },
-      { name:"SENIOR",     label:"Senior (65+)",         price:22, perks:["Full zoo access","All shows & talks","Guidebook"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",     price:85, perks:["2 adult + 2 child","Bundle saving","Guidebook"] },
-      { name:"ANNUAL",     label:"ZSL Annual Membership",price:95, perks:["Unlimited visits","Whipsnade included","10% shop discount","Member newsletter"] },
+      { name:"ADULT",      label:"Adult (16–64)",       price:16000, perks:["Full zoo access","All shows & talks","Guidebook"] },
+      { name:"CHILD",      label:"Child (3–15)",         price:10000, perks:["Full zoo access","All shows & talks"] },
+      { name:"SENIOR",     label:"Senior (65+)",         price:12000, perks:["Full zoo access","All shows & talks","Guidebook"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",     price:47000, perks:["2 adult + 2 child","Bundle saving","Guidebook"] },
+      { name:"ANNUAL",     label:"ZSL Annual Membership",price:53000, perks:["Unlimited visits","Whipsnade included","10% shop discount","Member newsletter"] },
     ],
   },
   {
@@ -75,11 +75,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Crown Jewels", badgeType:"featured", color:"#f59e0b",
     highlights:["Crown Jewels exhibition","Yeoman Warder tours","White Tower","Ravens","Medieval Palace","Gift shop"],
     tiers:[
-      { name:"ADULT",      label:"Adult (18–59)",       price:29, perks:["Full access","Yeoman tour","Crown Jewels","Audio guide"] },
-      { name:"CHILD",      label:"Child (5–17)",         price:15, perks:["Full access","Yeoman tour","Crown Jewels"] },
+      { name:"ADULT",      label:"Adult (18–59)",       price:16000, perks:["Full access","Yeoman tour","Crown Jewels","Audio guide"] },
+      { name:"CHILD",      label:"Child (5–17)",         price:10000, perks:["Full access","Yeoman tour","Crown Jewels"] },
       { name:"UNDER 5",    label:"Child under 5",        price:0,  perks:["Free entry (ticket required)"] },
-      { name:"SENIOR",     label:"Senior (60+)",         price:24, perks:["Full access","Yeoman tour","Crown Jewels","Audio guide"] },
-      { name:"FAMILY",     label:"Family (2A + up to 3C)",price:75,perks:["Bundle entry","Yeoman tour","Crown Jewels"] },
+      { name:"SENIOR",     label:"Senior (60+)",         price:13000, perks:["Full access","Yeoman tour","Crown Jewels","Audio guide"] },
+      { name:"FAMILY",     label:"Family (2A + up to 3C)",price:42000,perks:["Bundle entry","Yeoman tour","Crown Jewels"] },
     ],
   },
   {
@@ -93,11 +93,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"School Hols", badgeType:"urgent", color:"#ef4444",
     highlights:["LEGO City", "Miniland","Dragon Roller Coaster","NINJAGO The Ride","DUPLO Valley","Water Rides"],
     tiers:[
-      { name:"ADULT",      label:"Adult (13+)",          price:55, perks:["Full park access","All rides","Park map"] },
-      { name:"CHILD",      label:"Child (3–12)",          price:45, perks:["Full park access","All rides","Park map"] },
+      { name:"ADULT",      label:"Adult (13+)",          price:31000, perks:["Full park access","All rides","Park map"] },
+      { name:"CHILD",      label:"Child (3–12)",          price:25000, perks:["Full park access","All rides","Park map"] },
       { name:"TODDLER",    label:"Child under 3",         price:0,  perks:["Free entry"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:168,perks:["Bundle entry","Saving vs. individual","Park map"] },
-      { name:"ANNUAL",     label:"Merlin Annual Pass",    price:99, perks:["Unlimited visits","15% F&B discount","Early entry","Guest days"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:93000,perks:["Bundle entry","Saving vs. individual","Park map"] },
+      { name:"ANNUAL",     label:"Merlin Annual Pass",    price:55000, perks:["Unlimited visits","15% F&B discount","Early entry","Guest days"] },
     ],
   },
   {
@@ -112,8 +112,8 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     highlights:["Turbine Hall","Permanent Collection","Special Exhibitions","Viewing Level (free)","Tate Eats","Tate Shop"],
     tiers:[
       { name:"GENERAL",    label:"General Admission",    price:0,  perks:["Turbine Hall","Permanent Collection","Viewing Level"] },
-      { name:"EXHIBITION", label:"Special Exhibition",   price:22, perks:["Special exhibition entry","Permanent Collection","Viewing Level","Audio guide"] },
-      { name:"SUPPORTER",  label:"Tate Supporter",       price:80, perks:["Unlimited exhibitions for 12 months","10% shop discount","Invitations to events","Annual report"] },
+      { name:"EXHIBITION", label:"Special Exhibition",   price:12000, perks:["Special exhibition entry","Permanent Collection","Viewing Level","Audio guide"] },
+      { name:"SUPPORTER",  label:"Tate Supporter",       price:44000, perks:["Unlimited exhibitions for 12 months","10% shop discount","Invitations to events","Annual report"] },
     ],
   },
   {
@@ -127,10 +127,10 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"New: Ocean Tunnel", badgeType:"new", color:"#0ea5e9",
     highlights:["14 zones","Glass-bottom boat walk","Shark Walk","Tropical Rainforest","Penguin Point","Touch Pool"],
     tiers:[
-      { name:"ADULT",      label:"Adult (16+)",          price:25, perks:["Full aquarium access","All interactive zones"] },
-      { name:"CHILD",      label:"Child (3–15)",          price:18, perks:["Full aquarium access","All interactive zones"] },
+      { name:"ADULT",      label:"Adult (16+)",          price:14000, perks:["Full aquarium access","All interactive zones"] },
+      { name:"CHILD",      label:"Child (3–15)",          price:10000, perks:["Full aquarium access","All interactive zones"] },
       { name:"TODDLER",    label:"Child under 3",         price:0,  perks:["Free entry"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:75, perks:["Bundle entry","Saving vs. individual"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:42000, perks:["Bundle entry","Saving vs. individual"] },
     ],
   },
   {
@@ -144,11 +144,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Award Winning", badgeType:"featured", color:"#10b981",
     highlights:["Islands zone","Jaguar trail","Bear Wood","Monkey Forest","Fruit Bat Forest","Conservation fund"],
     tiers:[
-      { name:"ADULT",      label:"Adult (16–64)",        price:24, perks:["Full zoo access","All enclosures","Monorail"] },
-      { name:"CHILD",      label:"Child (3–15)",          price:18, perks:["Full zoo access","All enclosures","Monorail"] },
-      { name:"SENIOR",     label:"Senior (65+)",          price:20, perks:["Full zoo access","All enclosures","Monorail"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:75, perks:["Bundle entry","Saving vs. individual","Monorail"] },
-      { name:"ANNUAL",     label:"Chester Zoo Membership",price:85, perks:["Unlimited visits","10% retail discount","Monthly newsletter","Priority booking"] },
+      { name:"ADULT",      label:"Adult (16–64)",        price:13000, perks:["Full zoo access","All enclosures","Monorail"] },
+      { name:"CHILD",      label:"Child (3–15)",          price:10000, perks:["Full zoo access","All enclosures","Monorail"] },
+      { name:"SENIOR",     label:"Senior (65+)",          price:11000, perks:["Full zoo access","All enclosures","Monorail"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:42000, perks:["Bundle entry","Saving vs. individual","Monorail"] },
+      { name:"ANNUAL",     label:"Chester Zoo Membership",price:47000, perks:["Unlimited visits","10% retail discount","Monthly newsletter","Priority booking"] },
     ],
   },
   {
@@ -162,11 +162,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"UNESCO Site", badgeType:"featured", color:"#f59e0b",
     highlights:["Scottish Crown Jewels","Stone of Destiny","One O'Clock Gun","Great Hall","Royal Palace","Scottish National War Memorial"],
     tiers:[
-      { name:"ADULT",      label:"Adult (18–59)",        price:18, perks:["Full castle access","Audio guide","Crown Jewels"] },
-      { name:"CHILD",      label:"Child (5–17)",          price:11, perks:["Full castle access","Crown Jewels"] },
+      { name:"ADULT",      label:"Adult (18–59)",        price:10000, perks:["Full castle access","Audio guide","Crown Jewels"] },
+      { name:"CHILD",      label:"Child (5–17)",          price:10000, perks:["Full castle access","Crown Jewels"] },
       { name:"UNDER 5",    label:"Child under 5",         price:0,  perks:["Free entry"] },
-      { name:"SENIOR",     label:"Senior (60+)",          price:14, perks:["Full castle access","Audio guide","Crown Jewels"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:50, perks:["Bundle entry","Audio guide","Crown Jewels"] },
+      { name:"SENIOR",     label:"Senior (60+)",          price:10000, perks:["Full castle access","Audio guide","Crown Jewels"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:28000, perks:["Bundle entry","Audio guide","Crown Jewels"] },
     ],
   },
   {
@@ -180,10 +180,10 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"On Sale Now", badgeType:"new", color:"#ec4899",
     highlights:["250+ wax figures","Marvel 4D","Star Wars","Live Music Experience","Sports Zone","Royal Family"],
     tiers:[
-      { name:"ADULT",      label:"Adult (16+)",          price:30, perks:["Full attraction access","All zones","Photo opportunities"] },
-      { name:"CHILD",      label:"Child (3–15)",          price:24, perks:["Full attraction access","All zones"] },
-      { name:"SENIOR",     label:"Senior (60+)",          price:25, perks:["Full attraction access","All zones"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:96, perks:["Bundle entry","Saving vs. individual"] },
+      { name:"ADULT",      label:"Adult (16+)",          price:17000, perks:["Full attraction access","All zones","Photo opportunities"] },
+      { name:"CHILD",      label:"Child (3–15)",          price:13000, perks:["Full attraction access","All zones"] },
+      { name:"SENIOR",     label:"Senior (60+)",          price:14000, perks:["Full attraction access","All zones"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:53000, perks:["Bundle entry","Saving vs. individual"] },
     ],
   },
   {
@@ -197,11 +197,11 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Annual Pass Deal", badgeType:"featured", color:"#22c55e",
     highlights:["Rainforest Biome","Mediterranean Biome","Core education centre","Skywire zip wire","Outdoor gardens","Seasonal events"],
     tiers:[
-      { name:"ADULT",      label:"Adult (17–59)",        price:28, perks:["Both biomes","Outdoor gardens","Core building"] },
-      { name:"CHILD",      label:"Child (5–16)",          price:15, perks:["Both biomes","Outdoor gardens","Core building"] },
+      { name:"ADULT",      label:"Adult (17–59)",        price:16000, perks:["Both biomes","Outdoor gardens","Core building"] },
+      { name:"CHILD",      label:"Child (5–16)",          price:10000, perks:["Both biomes","Outdoor gardens","Core building"] },
       { name:"UNDER 5",    label:"Child under 5",         price:0,  perks:["Free entry"] },
-      { name:"SENIOR",     label:"Senior (60+)",          price:22, perks:["Both biomes","Outdoor gardens","Core building"] },
-      { name:"ANNUAL",     label:"Eden Annual Pass",      price:55, perks:["Unlimited visits all year","Guest passes","Events access","10% café discount"] },
+      { name:"SENIOR",     label:"Senior (60+)",          price:12000, perks:["Both biomes","Outdoor gardens","Core building"] },
+      { name:"ANNUAL",     label:"Eden Annual Pass",      price:31000, perks:["Unlimited visits all year","Guest passes","Events access","10% café discount"] },
     ],
   },
   {
@@ -215,10 +215,10 @@ export const ALL_ATTRACTIONS: Attraction[] = [
     badge:"Ride Pass Available", badgeType:"new", color:"#f97316",
     highlights:["Nemesis Reborn","Wicker Man","Thirteen","Oblivion","CBeebies Land","Water Park"],
     tiers:[
-      { name:"ADULT",      label:"Adult (13+)",          price:50, perks:["Full park access","All rides","Park map"] },
-      { name:"CHILD",      label:"Child (3–12)",          price:38, perks:["Full park access","All rides","Park map"] },
-      { name:"FAMILY",     label:"Family (2A + 2C)",      price:160,perks:["Bundle entry","Saving vs. individual","Park map"] },
-      { name:"ANNUAL",     label:"Merlin Annual Pass",    price:99, perks:["Unlimited visits","15% F&B discount","Early entry","Guest days"] },
+      { name:"ADULT",      label:"Adult (13+)",          price:28000, perks:["Full park access","All rides","Park map"] },
+      { name:"CHILD",      label:"Child (3–12)",          price:21000, perks:["Full park access","All rides","Park map"] },
+      { name:"FAMILY",     label:"Family (2A + 2C)",      price:89000,perks:["Bundle entry","Saving vs. individual","Park map"] },
+      { name:"ANNUAL",     label:"Merlin Annual Pass",    price:55000, perks:["Unlimited visits","15% F&B discount","Early entry","Guest days"] },
     ],
   },
 ];

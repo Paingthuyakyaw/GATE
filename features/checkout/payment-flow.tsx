@@ -5,6 +5,7 @@ import { Check, ChevronRight, Share2, Ticket, X } from "lucide-react";
 
 import { genRef } from "./gen-ref";
 import { QRCode } from "./qr-code";
+import { formatPrice } from "@/features/theme/money";
 import { display, mono, th } from "@/features/theme/tokens";
 
 export interface PayProps {
@@ -108,14 +109,14 @@ export function PaymentFlow(props: PayProps) {
     width: "100%",
     padding: "10px 14px",
     fontSize: 14,
-    fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
+    fontFamily: mono.fontFamily,
     boxShadow: dark ? "none" : "inset 0 1px 2px rgba(0,0,0,0.04)",
   };
   const errStyle: React.CSSProperties = {
     fontSize: 11,
     color: "#ef4444",
     marginTop: 4,
-    fontFamily: "var(--font-dm-mono), 'DM Mono', monospace",
+    fontFamily: mono.fontFamily,
   };
 
   return (
@@ -144,7 +145,7 @@ export function PaymentFlow(props: PayProps) {
                   {isFree ? "Reserve Free Ticket" : "Secure Checkout"}
                 </div>
                 <div className="text-xs mt-0.5" style={{ ...mono, color: t.muted }}>
-                  {qty}× {tierLabel} · {isFree ? "Free" : `£${total.toFixed(2)}`}
+                  {qty}× {tierLabel} · {isFree ? "Free" : formatPrice(total)}
                 </div>
               </div>
               <button
@@ -187,7 +188,7 @@ export function PaymentFlow(props: PayProps) {
                   className="ml-auto shrink-0 font-bold text-lg"
                   style={{ ...display, color: accentColor }}
                 >
-                  {isFree ? "FREE" : `£${total.toFixed(2)}`}
+                  {isFree ? "FREE" : formatPrice(total)}
                 </div>
               </div>
 
@@ -312,8 +313,8 @@ export function PaymentFlow(props: PayProps) {
 
                   <div className="space-y-2 pt-1" style={{ borderTop: `1px solid ${t.border}` }}>
                     {[
-                      { l: `${qty}× ${tierLabel}`, v: `£${subtotal}` },
-                      { l: "Booking fee", v: `£${fee.toFixed(2)}` },
+                      { l: `${qty}× ${tierLabel}`, v: formatPrice(subtotal) },
+                      { l: "Booking fee", v: formatPrice(fee) },
                     ].map((row) => (
                       <div
                         key={row.l}
@@ -333,7 +334,7 @@ export function PaymentFlow(props: PayProps) {
                       }}
                     >
                       <span>Total</span>
-                      <span style={{ color: accentColor }}>£{total.toFixed(2)}</span>
+                      <span style={{ color: accentColor }}>{formatPrice(total)}</span>
                     </div>
                   </div>
                 </>
@@ -351,7 +352,7 @@ export function PaymentFlow(props: PayProps) {
                   boxShadow: `0 6px 20px ${accentColor}55`,
                 }}
               >
-                {isFree ? "Reserve Ticket — Free" : `Pay £${total.toFixed(2)} Now`}
+                {isFree ? "Reserve Ticket — Free" : `Pay ${formatPrice(total)} Now`}
                 <ChevronRight size={16} />
               </button>
 
@@ -548,7 +549,7 @@ export function PaymentFlow(props: PayProps) {
                         className="text-[10px] font-bold uppercase tracking-[0.2em]"
                         style={{ ...mono, color: t.faint }}
                       >
-                        {isFree ? "FREE ENTRY" : `£${total.toFixed(2)} PAID`}
+                        {isFree ? "FREE ENTRY" : `${formatPrice(total)} PAID`}
                       </div>
                       <div
                         className="text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"

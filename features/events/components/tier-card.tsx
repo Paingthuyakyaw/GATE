@@ -4,6 +4,7 @@ import { Check, ChevronRight } from "lucide-react";
 
 import { AvailBar } from "./avail-bar";
 import type { Tier } from "@/features/events/types";
+import { formatPrice } from "@/features/theme/money";
 import { display, mono, th } from "@/features/theme/tokens";
 
 export function TierCard({
@@ -54,7 +55,7 @@ export function TierCard({
         </div>
         <div className="text-right shrink-0">
           <div className="text-2xl font-bold" style={{ ...display, color: t.txt }}>
-            £{tier.price}
+            {formatPrice(tier.price)}
           </div>
           <div className="text-[10px]" style={{ ...mono, color: t.faint }}>
             per person

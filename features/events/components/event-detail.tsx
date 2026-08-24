@@ -17,6 +17,7 @@ import {
 import { TierCard } from "./tier-card";
 import { PaymentFlow } from "@/features/checkout/payment-flow";
 import type { Event } from "@/features/events/types";
+import { EVENT_BOOKING_FEE, formatPrice } from "@/features/theme/money";
 import { badgeCls, display, mono, th } from "@/features/theme/tokens";
 import { useGateTheme } from "@/features/theme/use-gate-theme";
 
@@ -28,7 +29,7 @@ export function EventDetail({ event }: { event: Event }) {
   const [paying, setPaying] = useState(false);
   const chosen = selTier !== null ? event.tiers[selTier] : null;
   const subtotal = chosen ? chosen.price * qty : 0;
-  const fee = parseFloat((1.75 * qty).toFixed(2));
+  const fee = EVENT_BOOKING_FEE * qty;
   const t = th(dark);
 
   return (
@@ -268,11 +269,11 @@ export function EventDetail({ event }: { event: Event }) {
                         <span style={{ color: t.muted }}>
                           {qty}× {chosen.label}
                         </span>
-                        <span style={{ color: t.txt }}>£{subtotal}</span>
+                        <span style={{ color: t.txt }}>{formatPrice(subtotal)}</span>
                       </div>
                       <div className="flex justify-between">
                         <span style={{ color: t.muted }}>Booking fee</span>
-                        <span style={{ color: t.txt }}>£{fee}</span>
+                        <span style={{ color: t.txt }}>{formatPrice(fee)}</span>
                       </div>
                       <div
                         className="pt-2 flex justify-between font-bold text-base"
@@ -280,7 +281,7 @@ export function EventDetail({ event }: { event: Event }) {
                       >
                         <span style={{ color: t.muted }}>Total</span>
                         <span style={{ color: event.color }}>
-                          £{(subtotal + fee).toFixed(2)}
+                          {formatPrice(subtotal + fee)}
                         </span>
                       </div>
                     </div>
@@ -303,7 +304,7 @@ export function EventDetail({ event }: { event: Event }) {
                 >
                   {chosen ? (
                     <>
-                      <Ticket size={16} /> Buy Now — £{(subtotal + fee).toFixed(2)}
+                      <Ticket size={16} /> Buy Now — {formatPrice(subtotal + fee)}
                     </>
                   ) : (
                     "Select a Ticket Type"

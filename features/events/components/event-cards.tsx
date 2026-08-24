@@ -5,6 +5,7 @@ import { Calendar, ChevronRight, Clock, LayoutGrid, List, MapPin } from "lucide-
 import { CATEGORIES } from "@/features/events/data";
 import { eventSellThrough, minAvailablePrice } from "@/features/events/lib";
 import type { Event } from "@/features/events/types";
+import { formatPrice } from "@/features/theme/money";
 import { badgeCls, display, mono, pctColor, pctLabel, th } from "@/features/theme/tokens";
 
 export function EventsGridCard({
@@ -86,7 +87,7 @@ export function EventsGridCard({
               from
             </div>
             <div className="text-xl font-bold" style={{ ...display, color: event.color }}>
-              £{minP}
+              {formatPrice(minP)}
             </div>
           </div>
         </div>
@@ -193,10 +194,10 @@ export function EventsListCard({
                 from
               </div>
               <div className="text-2xl font-bold" style={{ ...display, color: event.color }}>
-                £{minP}
+                {formatPrice(minP)}
               </div>
               <div className="text-[10px]" style={{ ...mono, color: t.faint }}>
-                to £{maxP}
+                to {formatPrice(maxP)}
               </div>
             </div>
           </div>

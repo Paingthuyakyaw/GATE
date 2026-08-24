@@ -1,11 +1,10 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
-import clsx from "clsx";
 
 import { Footer } from "@/components/layout/footer";
 import { GateShell } from "@/components/layout/gate-shell";
 import { Header } from "@/components/layout/header";
-import { fontDisplay, fontMono, fontSans } from "@/config/fonts";
+import { FONT_FAMILY } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 
 import { Providers } from "./providers";
@@ -37,12 +36,8 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <head />
       <body
-        className={clsx(
-          "min-h-screen antialiased",
-          fontSans.variable,
-          fontDisplay.variable,
-          fontMono.variable,
-        )}
+        className="min-h-screen font-sans antialiased"
+        style={{ fontFamily: FONT_FAMILY }}
       >
         <Providers themeProps={{ attribute: "class", defaultTheme: "dark" }}>
           <GateShell>

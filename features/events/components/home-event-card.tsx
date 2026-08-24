@@ -5,6 +5,7 @@ import { ChevronRight, MapPin } from "lucide-react";
 import { CATEGORIES } from "@/features/events/data";
 import { eventSellThrough, minAvailablePrice } from "@/features/events/lib";
 import type { Event } from "@/features/events/types";
+import { formatPrice } from "@/features/theme/money";
 import { badgeCls, display, mono, pctColor, pctLabel, th } from "@/features/theme/tokens";
 
 export function HomeEventCard({
@@ -85,7 +86,7 @@ export function HomeEventCard({
               from
             </div>
             <div className="text-xl font-bold" style={{ ...display, color: event.color }}>
-              £{minP}
+              {formatPrice(minP)}
             </div>
           </div>
         </div>

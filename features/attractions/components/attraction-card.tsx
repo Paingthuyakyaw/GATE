@@ -4,6 +4,7 @@ import { ChevronRight, Clock, MapPin, Star } from "lucide-react";
 
 import { ATTR_CATS } from "@/features/attractions/data";
 import type { Attraction } from "@/features/attractions/types";
+import { formatPrice } from "@/features/theme/money";
 import { badgeCls, display, mono, th } from "@/features/theme/tokens";
 
 export function AttractionCard({
@@ -96,7 +97,7 @@ export function AttractionCard({
                   from
                 </div>
                 <div className="text-base font-bold" style={{ ...display, color: attr.color }}>
-                  £{minPrice}
+                  {formatPrice(minPrice)}
                 </div>
               </>
             )}
