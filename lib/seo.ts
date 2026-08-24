@@ -51,7 +51,7 @@ export function pageMetadata({
       title,
       description,
       url,
-      siteName: siteConfig.name,
+      siteName: siteConfig.title,
       images: [
         {
           url: ogImage,
@@ -82,19 +82,21 @@ export function websiteJsonLd() {
     "@graph": [
       {
         "@type": "Organization",
-        name: siteConfig.name,
+        name: siteConfig.title,
+        alternateName: [siteConfig.name, "GATE Ticketing"],
         url: siteUrl,
         description: siteConfig.description,
       },
       {
         "@type": "WebSite",
-        name: siteConfig.name,
+        name: siteConfig.title,
+        alternateName: [siteConfig.name, "GATE Ticketing"],
         url: siteUrl,
         description: siteConfig.description,
         inLanguage: "en",
         publisher: {
           "@type": "Organization",
-          name: siteConfig.name,
+          name: siteConfig.title,
         },
       },
     ],
@@ -136,7 +138,7 @@ export function eventJsonLd(event: Event) {
     },
     organizer: {
       "@type": "Organization",
-      name: siteConfig.name,
+      name: siteConfig.title,
       url: siteUrl,
     },
   };

@@ -13,19 +13,19 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} — Event & Attraction Tickets`,
-    template: `%s - ${siteConfig.name}`,
+    default: siteConfig.title,
+    template: `%s | ${siteConfig.title}`,
   },
   description: siteConfig.description,
   generator: siteConfig.creator,
-  applicationName: siteConfig.name,
+  applicationName: siteConfig.title,
   referrer: "origin-when-cross-origin",
   metadataBase: new URL(siteUrl),
   keywords: siteConfig.keywords,
   category: siteConfig.category,
   authors: [{ name: siteConfig.creator }],
   creator: siteConfig.creator,
-  publisher: siteConfig.name,
+  publisher: siteConfig.title,
   icons: {
     icon: "/favicon.ico",
   },
@@ -44,16 +44,16 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${siteConfig.name} — Event & Attraction Tickets`,
+    title: siteConfig.title,
     description: siteConfig.description,
     url: siteUrl,
-    siteName: siteConfig.name,
+    siteName: siteConfig.title,
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: siteConfig.title,
       },
     ],
     locale: "en",
@@ -61,12 +61,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — Event & Attraction Tickets`,
+    title: siteConfig.title,
     description: siteConfig.description,
     creator: siteConfig.creator,
     images: {
       url: siteConfig.ogImage,
-      alt: siteConfig.name,
+      alt: siteConfig.title,
     },
   },
 };

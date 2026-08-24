@@ -1,20 +1,23 @@
 export type SiteConfig = typeof siteConfig;
 
-const vercelUrl = "https://gate-seven-chi.vercel.app/"
+const vercelUrl = "https://gate-seven-chi.vercel.app/";
 
 export const siteConfig = {
   name: "GATE",
+  title: "GATE Tickets",
   description:
-    "GATE is ticketing for live events and attractions — from intimate jazz clubs to stadium shows.",
-  url:
-    process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
+    "GATE Tickets for live events and attractions — concerts, theatre, sports, theme parks and more.",
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
   ogImage:
     "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&auto=format",
   keywords: [
+    "GATE Tickets",
     "GATE",
-    "Event tickets",
-    "Tickets",
-    "GATE tickets",
+    "GATE ticketing",
+    "event tickets",
+    "attraction tickets",
+    "concert tickets",
+    "book tickets",
   ],
   creator: "Paing Thura Kyaw",
   category: "Ticketing",
