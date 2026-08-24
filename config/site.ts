@@ -1,9 +1,31 @@
 export type SiteConfig = typeof siteConfig;
 
+const vercelUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : undefined;
+
 export const siteConfig = {
   name: "GATE",
   description:
     "UK ticketing for live events and attractions — from intimate jazz clubs to stadium shows.",
+  url:
+    process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
+  ogImage:
+    "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&auto=format",
+  keywords: [
+    "GATE",
+    "UK tickets",
+    "event tickets",
+    "concert tickets",
+    "theatre tickets",
+    "attraction tickets",
+    "London events",
+    "Manchester events",
+    "theme parks",
+    "live music",
+  ],
+  creator: "Paing Thura Kyaw",
+  category: "Ticketing",
   navItems: [
     {
       label: "Home",
