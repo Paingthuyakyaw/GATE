@@ -13,7 +13,7 @@ import { Providers } from "./providers";
 
 export const metadata: Metadata = {
   title: {
-    default: `${siteConfig.name} — UK Event & Attraction Tickets`,
+    default: `${siteConfig.name} — Event & Attraction Tickets`,
     template: `%s - ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: `${siteConfig.name} — UK Event & Attraction Tickets`,
+    title: `${siteConfig.name} — Event & Attraction Tickets`,
     description: siteConfig.description,
     url: siteUrl,
     siteName: siteConfig.name,
@@ -56,12 +56,12 @@ export const metadata: Metadata = {
         alt: siteConfig.name,
       },
     ],
-    locale: "en_GB",
+    locale: "en",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — UK Event & Attraction Tickets`,
+    title: `${siteConfig.name} — Event & Attraction Tickets`,
     description: siteConfig.description,
     creator: siteConfig.creator,
     images: {

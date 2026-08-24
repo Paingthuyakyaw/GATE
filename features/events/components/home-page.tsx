@@ -240,7 +240,7 @@ export function HomePage() {
               Discover your next live experience
             </h3>
             <p className="text-white/70 text-sm font-medium">
-              20 events across the UK — from intimate jazz clubs to stadium shows.
+              20 events — from intimate jazz clubs to stadium shows.
             </p>
           </div>
           <button

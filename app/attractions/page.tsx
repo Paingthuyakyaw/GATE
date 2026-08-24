@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Attractions",
   description:
-    "Book UK attractions — theme parks, museums, zoos, heritage sites and unforgettable experiences.",
+    "Book attractions on GATE — theme parks, museums, zoos, heritage sites and unforgettable experiences.",
   path: "/attractions",
 });
 

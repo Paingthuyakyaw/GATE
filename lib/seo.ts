@@ -60,7 +60,7 @@ export function pageMetadata({
           alt: imageAlt ?? title,
         },
       ],
-      locale: "en_GB",
+      locale: "en",
       type: "website",
     },
     twitter: {
@@ -91,7 +91,7 @@ export function websiteJsonLd() {
         name: siteConfig.name,
         url: siteUrl,
         description: siteConfig.description,
-        inLanguage: "en-GB",
+        inLanguage: "en",
         publisher: {
           "@type": "Organization",
           name: siteConfig.name,
@@ -123,7 +123,6 @@ export function eventJsonLd(event: Event) {
       address: {
         "@type": "PostalAddress",
         addressLocality: event.city,
-        addressCountry: "GB",
       },
     },
     offers: {
@@ -154,7 +153,6 @@ export function attractionJsonLd(attr: Attraction) {
       "@type": "PostalAddress",
       streetAddress: attr.address,
       addressLocality: attr.city,
-      addressCountry: "GB",
     },
     openingHours: attr.hours,
     aggregateRating: {

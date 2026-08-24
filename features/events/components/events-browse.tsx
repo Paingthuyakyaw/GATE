@@ -104,7 +104,7 @@ export function EventsBrowse() {
                 All Events
               </h1>
               <p className="text-sm mt-1.5 font-medium" style={{ color: t.muted }}>
-                {ALL_EVENTS.length} events across the UK — music, theatre, sports &amp; more
+                {ALL_EVENTS.length} events — music, theatre, sports &amp; more
               </p>
             </div>
             <div className="flex items-center gap-3 flex-1 md:max-w-sm">

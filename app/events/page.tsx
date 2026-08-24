@@ -6,7 +6,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata: Metadata = pageMetadata({
   title: "Events",
   description:
-    "Browse live events across London, Manchester, Birmingham, Glasgow and Leeds — music, theatre, sports, comedy and more.",
+    "Browse live events on GATE — music, theatre, sports, comedy and more.",
   path: "/events",
 });
 
