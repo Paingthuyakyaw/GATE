@@ -103,16 +103,70 @@ export function websiteJsonLd() {
   };
 }
 
+function padTime(value: string) {
+  const [hours, minutes] = value.split(":");
+
+  return `${hours.padStart(2, "0")}:${minutes}`;
+}
+
+function toMinutes(value: string) {
+  const [hours, minutes] = padTime(value).split(":").map(Number);
+
+  return hours * 60 + minutes;
+}
+
+function addDays(date: string, days: number) {
+  const next = new Date(`${date}T00:00:00Z`);
+  next.setUTCDate(next.getUTCDate() + days);
+
+  return next.toISOString().slice(0, 10);
+}
+
+function addHoursToTime(value: string, hoursToAdd: number) {
+  const total = (toMinutes(value) + hoursToAdd * 60) % (24 * 60);
+  const hours = Math.floor(total / 60)
+    .toString()
+    .padStart(2, "0");
+  const minutes = (total % 60).toString().padStart(2, "0");
+
+  return `${hours}:${minutes}`;
+}
+
+function eventSchedule(event: Event) {
+  const times = (event.time.match(/\d{1,2}:\d{2}/g) ?? []).map(padTime);
+  const startTime = times[0] ?? "19:00";
+  const isRange = event.time.includes("–") || event.time.includes("-");
+  const endTime = times[1]
+    ? isRange
+      ? times[1]
+      : addHoursToTime(times[1], 2)
+    : addHoursToTime(startTime, 3);
+  const wrapsOvernight = toMinutes(endTime) <= toMinutes(startTime);
+
+  return {
+    startDate: `${event.date}T${startTime}:00`,
+    endDate: `${wrapsOvernight ? addDays(event.date, 1) : event.date}T${endTime}:00`,
+  };
+}
+
+function ticketValidFrom(eventDate: string) {
+  return addDays(eventDate, -90);
+}
+
 export function eventJsonLd(event: Event) {
   const available = event.tiers.some((tier) => tier.avail);
+  const { startDate, endDate } = eventSchedule(event);
+  const eventUrl = absUrl(`/events/${event.id}`);
 
   return {
     "@context": "https://schema.org",
     "@type": "Event",
     name: event.name,
     description: eventDescription(event),
-    startDate: event.date,
+    startDate,
+    endDate,
     image: event.image,
+    url: eventUrl,
     eventStatus: "https://schema.org/EventScheduled",
     eventAttendanceMode: "https://schema.org/OfflineEventAttendanceMode",
     performer: {
@@ -125,13 +179,15 @@ export function eventJsonLd(event: Event) {
       address: {
         "@type": "PostalAddress",
         addressLocality: event.city,
+        addressCountry: "GB",
       },
     },
     offers: {
       "@type": "Offer",
-      url: absUrl(`/events/${event.id}`),
+      url: eventUrl,
       price: event.minPrice,
       priceCurrency: "MMK",
+      validFrom: ticketValidFrom(event.date),
       availability: available
         ? "https://schema.org/InStock"
         : "https://schema.org/SoldOut",
