@@ -7,6 +7,7 @@ import { Menu, Moon, Sun, User, X, Zap } from "lucide-react";
 
 import { display, mono, th } from "@/features/theme/tokens";
 import { useGateTheme } from "@/features/theme/use-gate-theme";
+import { siteConfig } from "@/config/site";
 
 const navLinks = [
   { label: "Events", href: "/events" },
@@ -54,10 +55,10 @@ export function Header() {
               <Zap size={15} color="#fff" />
             </div>
             <span
-              className="text-lg font-black tracking-widest uppercase"
+              className="text-lg font-black tracking-wide leading-none"
               style={{ ...display, color: t.txt }}
             >
-              GATE
+              {siteConfig.title}
             </span>
           </Link>
           <nav className="hidden md:flex items-center gap-1 flex-1">

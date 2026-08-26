@@ -481,7 +481,7 @@ export function PaymentFlow(props: PayProps) {
                       className="text-xs font-bold uppercase tracking-widest text-white/70 mb-1"
                       style={mono}
                     >
-                      GATE · Official Ticket
+                      GATE Tickets · Official Ticket
                     </div>
                     <div className="text-2xl font-black text-white leading-tight" style={display}>
                       {name}

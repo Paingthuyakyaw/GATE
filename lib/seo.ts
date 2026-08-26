@@ -83,14 +83,14 @@ export function websiteJsonLd() {
       {
         "@type": "Organization",
         name: siteConfig.title,
-        alternateName: [siteConfig.name, "GATE Ticketing"],
+        alternateName: siteConfig.name,
         url: siteUrl,
         description: siteConfig.description,
       },
       {
         "@type": "WebSite",
         name: siteConfig.title,
-        alternateName: [siteConfig.name, "GATE Ticketing"],
+        alternateName: siteConfig.name,
         url: siteUrl,
         description: siteConfig.description,
         inLanguage: "en",

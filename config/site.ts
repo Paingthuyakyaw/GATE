@@ -12,9 +12,8 @@ export const siteConfig = {
     "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&auto=format",
   keywords: [
     "GATE Tickets",
+    "Gate Tickets",
     "GATE",
-    "GATE ticketing",
-    "GATE tickets",
   ],
   creator: "Paing Thura Kyaw",
   category: "Ticketing",

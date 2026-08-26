@@ -2,10 +2,11 @@
 
 import { Zap } from "lucide-react";
 
+import { siteConfig } from "@/config/site";
 import { mono, th } from "@/features/theme/tokens";
 import { useGateTheme } from "@/features/theme/use-gate-theme";
 
-export function Footer({ label = "GATE Ticketing © 2026" }: { label?: string }) {
+export function Footer({ label = `${siteConfig.title} © 2026` }: { label?: string }) {
   const { dark } = useGateTheme();
   const t = th(dark);
 
