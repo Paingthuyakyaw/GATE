@@ -6,8 +6,7 @@ export const siteConfig = {
   name: "GATE Tickets",
   title: "GATE Tickets",
   description:
-    "GATE Tickets for live events and attractions — concerts, theatre, sports, theme parks and more.",
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
+  "GATE — Event & Attraction Tickets. Discover and buy event and attraction tickets online.",  url: process.env.NEXT_PUBLIC_SITE_URL ?? vercelUrl ?? "http://localhost:3000",
   ogImage:
     "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1200&h=630&fit=crop&auto=format",
   keywords: [
