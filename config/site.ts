@@ -3,7 +3,7 @@ export type SiteConfig = typeof siteConfig;
 const vercelUrl = "https://gate-seven-chi.vercel.app/";
 
 export const siteConfig = {
-  name: "GATE",
+  name: "GATE Tickets",
   title: "GATE Tickets",
   description:
     "GATE Tickets for live events and attractions — concerts, theatre, sports, theme parks and more.",

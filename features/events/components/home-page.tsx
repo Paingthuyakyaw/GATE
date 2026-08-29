@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { ChevronLeft, ChevronRight, Flame } from "lucide-react";
 
 import { HomeEventCard } from "./home-event-card";
+import { siteConfig } from "@/config/site";
 import { ALL_EVENTS } from "@/features/events/data";
 import { eventSellThrough, trendingEvents } from "@/features/events/lib";
 import { badgeCls, display, mono, pctColor, pctLabel, th } from "@/features/theme/tokens";
@@ -49,18 +50,24 @@ export function HomePage() {
         <div className="absolute inset-0 flex items-end">
           <div className="max-w-7xl mx-auto px-6 pb-14 w-full">
             <div className="max-w-xl">
+              <h1
+                className="text-[11px] font-semibold tracking-widest uppercase mb-4"
+                style={{ ...mono, color: "rgba(255,255,255,0.72)" }}
+              >
+                {siteConfig.title}
+              </h1>
               <span
                 className={`inline-block text-[11px] font-semibold tracking-widest uppercase border px-3 py-1.5 rounded-full mb-5 ${badgeCls(heroEvent.badgeType, true)}`}
                 style={mono}
               >
                 {heroEvent.badge}
               </span>
-              <h1
+              <p
                 className="text-5xl md:text-7xl font-black text-white leading-none mb-3"
                 style={display}
               >
                 {heroEvent.name}
-              </h1>
+              </p>
               <p className="text-lg text-white/60 font-medium mb-1">{heroEvent.artist}</p>
               <p className="text-sm text-white/40 mb-8" style={mono}>
                 {heroEvent.displayDate} · {heroEvent.venue}
@@ -205,7 +212,7 @@ export function HomePage() {
       <div className="max-w-7xl mx-auto px-6 py-10">
         <div className="flex items-center justify-between mb-7">
           <h2 className="text-3xl font-black" style={{ ...display, color: t.txt }}>
-            Featured Events
+            Featured events on {siteConfig.title}
           </h2>
           <button
             type="button"
@@ -240,7 +247,8 @@ export function HomePage() {
               Discover your next live experience
             </h3>
             <p className="text-white/70 text-sm font-medium">
-              20 events — from intimate jazz clubs to stadium shows.
+              {siteConfig.title} — events and attractions, from intimate jazz clubs to stadium
+              shows.
             </p>
           </div>
           <button
